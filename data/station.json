@@ -2,5 +2,16 @@
   "id": "eulr-focus",
   "name": "eulr focus radio",
   "epoch": "2026-01-01T00:00:00.000Z",
-  "trackIds": []
+  "trackIds": [
+    "bubbles",
+    "calm-currents",
+    "canon-event",
+    "fractured",
+    "moon-unit",
+    "one-night-in-france",
+    "still-life",
+    "theta-frequency",
+    "tranquil-mindscape",
+    "when-time-called-me-darling"
+  ]
 }
