@@ -35,8 +35,14 @@ if (process.argv.includes("--help")) {
   process.exit(0);
 }
 
-if (!process.env.BLOB_READ_WRITE_TOKEN) {
-  throw new Error("BLOB_READ_WRITE_TOKEN is required. Run `vercel env pull .env.local` first.");
+const blobToken =
+  process.env.EULR_MUSIC_READ_WRITE_TOKEN ??
+  process.env.BLOB_READ_WRITE_TOKEN;
+
+if (!blobToken) {
+  throw new Error(
+    "EULR_MUSIC_READ_WRITE_TOKEN or BLOB_READ_WRITE_TOKEN is required.",
+  );
 }
 
 const args = parseArgs(process.argv.slice(2));
@@ -52,6 +58,7 @@ if (!Number.isFinite(durationSeconds) || durationSeconds <= 0) {
 const file = await readFile(filePath);
 const pathname = `tracks/${id}-${basename(filePath)}`;
 const blob = await put(pathname, file, {
+  token: blobToken,
   access: "public",
   addRandomSuffix: false,
   contentType: args["content-type"],
