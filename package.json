@@ -1,0 +1,38 @@
+{
+  "name": "eulr-music-service",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Remote music catalog and synchronized radio service for eulr",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:catalog": "node scripts/validate-catalog.mjs",
+    "upload:track": "node scripts/upload-track.mjs"
+  },
+  "dependencies": {
+    "@vercel/blob": "2.5.0",
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "10.7.0",
+    "eslint-config-next": "16.2.10",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.28.0"
+}
